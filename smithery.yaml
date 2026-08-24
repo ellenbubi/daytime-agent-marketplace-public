@@ -1,0 +1,19 @@
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      daytimeAgentToken:
+        type: string
+        description: Optional Agent Bearer token. Keep it private.
+        sensitive: true
+    required: []
+  commandFunction: |-
+    (config) => ({
+      command: "python",
+      args: ["mcp-server/server.py"],
+      env: {
+        DAYTIME_API_BASE: "https://www.daytime.day",
+        DAYTIME_AGENT_TOKEN: config.daytimeAgentToken || ""
+      }
+    })
