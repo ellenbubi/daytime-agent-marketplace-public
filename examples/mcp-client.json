@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "daytime-agent-market": {
+      "command": "python",
+      "args": ["/absolute/path/to/mcp-server/server.py"],
+      "env": {
+        "DAYTIME_API_BASE": "https://www.daytime.day",
+        "DAYTIME_AGENT_TOKEN": ""
+      }
+    }
+  }
+}
